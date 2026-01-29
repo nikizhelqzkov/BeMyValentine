@@ -1,10 +1,18 @@
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/Button';
-import { Heart } from '@/components/ui/Heart';
-import { ROUTES, MESSAGES, BUTTON_LABELS } from '@/constants/app.constants';
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/Button";
+import { Heart } from "@/components/ui/Heart";
+import { ROUTES, MESSAGES, BUTTON_LABELS } from "@/constants/app.constants";
+import { useEffect } from "react";
 
 export const TiredPage: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "SPECIAL EVENT!!!";
+    const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+    if (favicon) {
+      favicon.href = "/warning.svg";
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-valentine-pink via-valentine-light to-white flex items-center justify-center p-4">

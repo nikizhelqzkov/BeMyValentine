@@ -11,6 +11,10 @@ export const QuestionPage: React.FC = () => {
 
   useEffect(() => {
     document.title = 'Be My Valentine 💝';
+    const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+    if (favicon) {
+      favicon.href = "/heart.svg";
+    }
   }, []);
 
   const handleYesClick = () => {

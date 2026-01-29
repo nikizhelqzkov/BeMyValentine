@@ -7,6 +7,10 @@ export const SuccessPage: React.FC = () => {
 
   useEffect(() => {
     document.title = 'Happy Valentine\'s Day! 💖';
+    const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+    if (favicon) {
+      favicon.href = "/heart.svg";
+    }
     setShowConfetti(true);
   }, []);
 
